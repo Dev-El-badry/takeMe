@@ -1,0 +1,38 @@
+<!-- Generated template for the MapComponent component -->
+<div class="wrapper">
+<div id="map"></div>
+
+<take-me 
+ 	[map]="map" 
+    [isPinSet]="isMapIdle"
+    [isPickupRequested]="isPickupRequested"
+    [destination]="destination"
+    (updatedPickupLocation)="updatePickupLocation($event)"></take-me>
+
+    <!--
+
+    Selector Available Car Used To show Cars On Maps
+
+    map => is used for add markers on map to vision available car
+
+    isPickupRequested => used for check if isPickupRequested Car Or Not Pickup Requested
+    -->
+<available-cars 
+	[map]="map"
+    [isPickupRequested]="isPickupRequested"
+></available-cars>
+
+<!--
+
+    End Selector available car
+
+-->
+
+<pickup-car 
+	[map]="map"
+    [isPickupRequested]="isPickupRequested"
+    [pickupLocation]="currentLocation"
+    [destination]="destination">
+    	
+    </pickup-car>
+</div> 
